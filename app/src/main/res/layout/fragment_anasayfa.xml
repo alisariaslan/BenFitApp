@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Anasayfa">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/btn_giris"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0.7"
+                    android:drawableTop="@android:drawable/ic_menu_edit"
+                    android:text="giriş"
+                    android:textSize="14sp"
+                    app:cornerRadius="20dp" />
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center">
+
+                    <Button
+                        android:id="@+id/btn_diger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:alpha="0.5"
+                        android:drawableTop="@android:drawable/ic_media_play"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/btn_insta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:alpha="0.5"
+                        android:drawableTop="@drawable/instagram"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        app:cornerRadius="20dp" />
+                </TableRow>
+
+                <Button
+                    android:id="@+id/anasayfa_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="10dp"
+                    android:alpha=".7"
+                    android:drawableTop="@android:drawable/ic_menu_view"
+                    android:enabled="false"
+                    android:textSize="14sp"
+                    app:cornerRadius="20dp" />
+
+            </FrameLayout>
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom|center_horizontal">
+
+                        <Button
+                            android:id="@+id/btn_olcu"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginEnd="10dp"
+                            android:alpha="0.7"
+                            android:drawableTop="@android:drawable/ic_input_get"
+                            android:enabled="true"
+                            android:padding="30dp"
+                            android:text="Ölçülerim\n"
+                            android:textSize="14sp"
+                            app:cornerRadius="20dp" />
+
+                        <Button
+                            android:id="@+id/btn_yag"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:alpha="0.7"
+                            android:drawableTop="@android:drawable/ic_menu_info_details"
+                            android:padding="30dp"
+                            android:text="Yağ\nOranları"
+                            android:textSize="14sp"
+                            app:cornerRadius="20dp" />
+
+                    </TableRow>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal">
+
+                    <Button
+                        android:id="@+id/btn_hareketlerim"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.7"
+                        android:drawableTop="@drawable/bench"
+                        android:padding="20dp"
+                        android:text="Programlarım"
+                        android:textSize="14sp"
+                        app:cornerRadius="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal|top">
+
+                    <Button
+                        android:id="@+id/btn_arena"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.7"
+                        android:drawableTop="@drawable/colosseum"
+                        android:enabled="true"
+                        android:padding="10dp"
+                        android:text="Arena"
+                        android:textSize="14sp"
+                        app:cornerRadius="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal">
+
+                    <Button
+                        android:id="@+id/btn_diyetlerim"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.7"
+                        android:drawableTop="@drawable/diet"
+                        android:padding="20dp"
+                        android:text="Diyetlerim"
+                        android:textSize="14sp"
+                        app:cornerRadius="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal">
+
+                    <Button
+                        android:id="@+id/btn_takviyeler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.7"
+                        android:drawableTop="@android:drawable/ic_dialog_info"
+                        android:padding="20dp"
+                        android:text="Yardımcı besinler\n(Takviyeler)"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        app:cornerRadius="20dp" />
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

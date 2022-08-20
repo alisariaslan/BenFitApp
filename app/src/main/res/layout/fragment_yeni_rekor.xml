@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".YeniRekor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:id="@+id/sv_giris2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_tarih2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Tarih"
+                    android:inputType="date"
+                    android:maxLength="10"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/et_isim2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="İsim"
+                    android:inputType="textPersonName"
+                    android:maxLength="30"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/hareket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hareket:"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:checkedButton="@id/rb_bench"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_squat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:text="Squat"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_bench"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="30dp"
+                        android:text="Bench\nPress"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_deadlift"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:layout_weight="1"
+                        android:text="Deadlift"
+                        android:textSize="20sp" />
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/et_hareket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Hareket"
+                    android:inputType="textNoSuggestions"
+                    android:maxLength="30"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/et_tekrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Tekrar"
+                    android:inputType="numberSigned"
+                    android:maxLength="5"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/et_agirlik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Ağırlık"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/btn_ekle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_marginBottom="15dp"
+                    android:alpha=".7"
+                    android:text="ekle"
+                    android:textAlignment="viewStart"
+                    android:textSize="20sp"
+                    app:icon="@android:drawable/ic_input_add"
+                    app:iconPadding="30dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</FrameLayout>

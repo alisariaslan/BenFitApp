@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BenFit</string>
+
+    //REALADDS
+
+    <string name="appid" translatable="false">ca-app-pub-8946455145480386~3498527194</string>
+    <string name="bannerAds" translatable="false">ca-app-pub-8946455145480386/8411942526</string>
+    <string name="interstatialAds" translatable="false">ca-app-pub-8946455145480386/9466584450</string>
+    //TESTADDS
+
+<!--        <string name="appid" translatable="false">ca-app-pub-3940256099942544~3347511713</string>-->
+<!--        <string name="bannerAds" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
+<!--        <string name="interstatialAds" translatable="false">ca-app-pub-3940256099942544/1033173712</string>-->
+
+    //NOADS
+
+
+</resources>
