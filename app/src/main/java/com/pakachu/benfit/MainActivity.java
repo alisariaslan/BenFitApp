@@ -10,10 +10,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
@@ -24,78 +28,34 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.pakachu.benfit.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ActivityMainBinding binding;
 
-    public static FragmentManager fragmentManager;
-    public static FragmentTransaction fragmentTransaction;
-    private static ConstraintLayout constraintLayout;
-
-    public static String status = "user";
-
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.hide();
+        binding.cvAdd.startAnimation(AnimationUtils.loadAnimation(getBaseContext(),R.anim.fadein));
 
-        AddLoader addLoader=new AddLoader(MainActivity.this);
-
-//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-        init();
-
-        Anasayfa mainAnasayfa = new Anasayfa();
-        replaceFragment(mainAnasayfa, null, false, false);
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+        binding.ivClose.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-                addLoader.initAds();
-                AdView mAdView = findViewById(R.id.adView);
-                AdRequest adRequest = new AdRequest.Builder().build();
-                mAdView.loadAd(adRequest);
+            public void onClick(View v) {
+                binding.cvAdd.startAnimation(AnimationUtils.loadAnimation(getBaseContext(),R.anim.fadeout));
             }
         });
 
+        binding.ivWallpaper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.pakachu.apaydinfitness")));
+            }
+        });
 
-
-    }
-
-    public static void setPadding(int a) {
-        constraintLayout.setPadding(a, a, a, a);
-    }
-
-
-    public static void replaceFragment(Fragment fragment, String thisFragment) {
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.lefttoright, R.anim.fadeout, R.anim.lefttoright, R.anim.fadeout);
-        fragmentTransaction.replace(R.id.main_constraint, fragment).addToBackStack(thisFragment).commit();
-    }
-
-    public static void replaceFragment(Fragment fragment, String thisFragment, Boolean geri, Boolean remove) {
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.lefttoright, R.anim.fadeout, R.anim.lefttoright, R.anim.fadeout);
-
-        if (geri) {
-            fragmentTransaction.replace(R.id.main_constraint, fragment).addToBackStack(thisFragment).commit();
-        } else {
-            fragmentTransaction.replace(R.id.main_constraint, fragment).disallowAddToBackStack().commit();
-        }
-        if (remove) {
-            fragmentTransaction.remove(fragment);
-        }
-
-    }
-
-
-    private void init() {
-        fragmentManager = getSupportFragmentManager();
-        constraintLayout = findViewById(R.id.main_constraint);
     }
 }
