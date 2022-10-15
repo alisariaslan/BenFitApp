@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_display"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -314,7 +315,9 @@
             android:id="@+id/ll_details"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="-100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/rounded_background"
             android:orientation="vertical"
             android:paddingTop="10dp"
@@ -337,7 +340,8 @@
                 android:inputType="textPersonName"
                 android:maxLength="50"
                 android:textColor="#eee"
-                android:textColorHint="#666" />
+                android:textColorHint="#666"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -355,7 +359,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="3"
                         android:fontFamily="@font/audiowide"
@@ -363,14 +367,15 @@
                         android:inputType="numberSigned"
                         android:maxLength="3"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/et_weight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="5"
                         android:fontFamily="@font/audiowide"
@@ -378,14 +383,15 @@
                         android:inputType="numberDecimal"
                         android:maxLength="5"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/et_height"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="3"
                         android:fontFamily="@font/audiowide"
@@ -393,14 +399,15 @@
                         android:inputType="numberSigned"
                         android:maxLength="3"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/et_arm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="4"
                         android:fontFamily="@font/audiowide"
@@ -408,14 +415,15 @@
                         android:inputType="numberDecimal"
                         android:maxLength="4"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/et_shoulder"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="5"
                         android:fontFamily="@font/audiowide"
@@ -423,7 +431,8 @@
                         android:inputType="numberDecimal"
                         android:maxLength="5"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -437,7 +446,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="5"
                         android:fontFamily="@font/audiowide"
@@ -445,14 +454,15 @@
                         android:inputType="numberDecimal"
                         android:maxLength="5"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/et_waist"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="5"
                         android:fontFamily="@font/audiowide"
@@ -460,14 +470,15 @@
                         android:inputType="numberDecimal"
                         android:maxLength="5"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/et_hips"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="5"
                         android:fontFamily="@font/audiowide"
@@ -475,14 +486,15 @@
                         android:inputType="numberDecimal"
                         android:maxLength="5"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/et_legs"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="5"
                         android:fontFamily="@font/audiowide"
@@ -490,14 +502,15 @@
                         android:inputType="numberDecimal"
                         android:maxLength="5"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/et_calf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="50dp"
                         android:ems="4"
                         android:fontFamily="@font/audiowide"
@@ -505,7 +518,8 @@
                         android:inputType="numberDecimal"
                         android:maxLength="4"
                         android:textColor="#eee"
-                        android:textColorHint="#666" />
+                        android:textColorHint="#666"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -516,9 +530,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="50dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/audiowide"
                 android:paddingStart="30dp"
                 android:paddingTop="10dp"

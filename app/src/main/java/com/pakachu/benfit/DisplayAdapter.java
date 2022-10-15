@@ -2,13 +2,17 @@ package com.pakachu.benfit;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.CountDownTimer;
 import android.os.IBinder;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -258,13 +262,14 @@ public class DisplayAdapter extends RecyclerView.Adapter<DisplayAdapter.ViewHold
                 }
             });
         } else {
+            if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+                holder.cl_display.setLayoutParams(new ConstraintLayout.LayoutParams(Resources.getSystem().getDisplayMetrics().widthPixels/3, ViewGroup.LayoutParams.MATCH_PARENT));
             holder.imageButton.setVisibility(View.VISIBLE);
             if (!displayItem.ismale)
                 holder.iv_gender.setImageDrawable(AppCompatResources.getDrawable(activity, R.drawable.women_physique));
             holder.cl_select_gender.setVisibility(View.GONE);
             holder.cl_physique.setVisibility(View.VISIBLE);
             holder.cl_physique.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.fadeinslow));
-            holder.cl_physique.setPadding(0, 500, 0, 0);
             holder.tv_name_surname.setText(displayItem.name_surname + "\n(" + displayItem.date + ")");
             holder.tv_age.setText(activity.getString(R.string.age) + ": " + displayItem.age);
             holder.tv_weight.setText(activity.getString(R.string.weight) + ": " + displayItem.weight);
@@ -281,8 +286,8 @@ public class DisplayAdapter extends RecyclerView.Adapter<DisplayAdapter.ViewHold
                 @Override
                 public void onClick(View v) {
                     v.setVisibility(View.GONE);
-                    DisplayDB displayDB=new DisplayDB(activity);
-                    displayDB.executeSQL("DELETE FROM "+DisplayDB.TABLE+" WHERE id="+displayItem.id);
+                    DisplayDB displayDB = new DisplayDB(activity);
+                    displayDB.executeSQL("DELETE FROM " + DisplayDB.TABLE + " WHERE id=" + displayItem.id);
                     mainActivity.binding.rvMain.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.fadeout));
                     new CountDownTimer(1000, 1000) {
                         @Override
@@ -383,7 +388,7 @@ public class DisplayAdapter extends RecyclerView.Adapter<DisplayAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder {
         EditText et_name_surname, et_age, et_weight, et_height, et_arm, et_shoulder, et_chest, et_waist, et_hips, et_legs, et_calf;
         TextView tv_name_surname, tv_age, tv_weight, tv_height, tv_arm, tv_shoulder, tv_chest, tv_waist, tv_hips, tv_legs, tv_calf;
-        ConstraintLayout cl_select_gender, cl_physique;
+        ConstraintLayout cl_select_gender, cl_physique, cl_display;
         LinearLayout ll_details;
         Button btn_man, btn_women, btn_save;
         ImageView iv_gender;
@@ -415,6 +420,7 @@ public class DisplayAdapter extends RecyclerView.Adapter<DisplayAdapter.ViewHold
             tv_calf = itemView.findViewById(R.id.tv_calf);
             cl_select_gender = itemView.findViewById(R.id.cl_select_gender);
             cl_physique = itemView.findViewById(R.id.cl_physique);
+            cl_display = itemView.findViewById(R.id.cl_display);
             ll_details = itemView.findViewById(R.id.ll_details);
             btn_man = itemView.findViewById(R.id.btn_man);
             btn_women = itemView.findViewById(R.id.btn_women);

@@ -9,8 +9,8 @@ android {
         applicationId "com.pakachu.benfit"
         minSdk 19
         targetSdk 32
-        versionCode 20
-        versionName "FitBook"
+        versionCode 21
+        versionName "FitLook"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
